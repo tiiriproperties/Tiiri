@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" style="background:#0d1b3e;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tiiri Properties – Connect With Us</title>
-  <meta name="color-scheme" content="only light">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    :root { color-scheme: only light; }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
 ```
-:root {
-  --navy: #0d1b3e;
-  --navy-light: #162348;
-  --gold: #c9a84c;
-  --gold-light: #e8c96a;
-  --gold-dim: #a8893a;
-  --white: #f8f5ef;
-  --text-muted: #9a8f7a;
+html, body {
+  background: #0d1b3e !important;
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--navy);
   font-family: 'DM Sans', sans-serif;
-  color: var(--white);
+  color: #f8f5ef !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Background texture */
 body::before {
   content: '';
   position: fixed;
@@ -48,7 +38,6 @@ body::before {
   z-index: 0;
 }
 
-/* Decorative corner lines */
 body::after {
   content: '';
   position: fixed;
@@ -66,10 +55,8 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
 }
 
-/* Logo area */
 .logo-wrap {
   display: flex;
   flex-direction: column;
@@ -81,7 +68,7 @@ body::after {
 .logo-icon {
   width: 72px;
   height: 72px;
-  background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+  background: linear-gradient(135deg, #c9a84c, #a8893a);
   border-radius: 18px;
   display: flex;
   align-items: center;
@@ -93,7 +80,7 @@ body::after {
 .logo-icon svg {
   width: 40px;
   height: 40px;
-  fill: var(--navy);
+  fill: #0d1b3e;
 }
 
 .brand-name {
@@ -101,7 +88,7 @@ body::after {
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: 0.05em;
-  color: var(--white);
+  color: #f8f5ef;
   line-height: 1;
   text-align: center;
 }
@@ -110,7 +97,7 @@ body::after {
   font-size: 0.72rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #c9a84c;
   margin-top: 5px;
   font-weight: 500;
 }
@@ -118,21 +105,19 @@ body::after {
 .divider {
   width: 48px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
   margin: 14px auto 0;
 }
 
-/* Tagline */
 .tagline {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #9a8f7a;
   text-align: center;
   letter-spacing: 0.04em;
   margin-bottom: 36px;
   animation: fadeDown 0.7s 0.1s ease both;
 }
 
-/* Social buttons */
 .socials {
   width: 100%;
   display: flex;
@@ -147,20 +132,10 @@ body::after {
   padding: 18px 24px;
   border-radius: 14px;
   text-decoration: none;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
   transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
   animation: fadeUp 0.6s ease both;
-}
-
-.social-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.25s ease;
 }
 
 .social-btn:hover {
@@ -168,29 +143,6 @@ body::after {
   border-color: rgba(201,168,76,0.35);
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
-
-.social-btn:hover::before { opacity: 1; }
-.social-btn:active { transform: translateY(0); }
-
-/* TikTok */
-.btn-tiktok { animation-delay: 0.2s; }
-.btn-tiktok::before { background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(105,201,208,0.08)); }
-.btn-tiktok .icon-bg { background: #010101; }
-
-/* Instagram */
-.btn-instagram { animation-delay: 0.3s; }
-.btn-instagram::before { background: linear-gradient(135deg, rgba(193,53,132,0.12), rgba(253,201,65,0.08)); }
-.btn-instagram .icon-bg { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
-
-/* Facebook */
-.btn-facebook { animation-delay: 0.4s; }
-.btn-facebook::before { background: linear-gradient(135deg, rgba(24,119,242,0.15), transparent); }
-.btn-facebook .icon-bg { background: #1877f2; }
-
-/* Threads */
-.btn-threads { animation-delay: 0.5s; }
-.btn-threads::before { background: linear-gradient(135deg, rgba(255,255,255,0.06), transparent); }
-.btn-threads .icon-bg { background: #101010; }
 
 .icon-bg {
   width: 46px;
@@ -208,75 +160,67 @@ body::after {
   fill: #fff;
 }
 
-.btn-text {
-  flex: 1;
-}
+.btn-text { flex: 1; }
 
 .btn-label {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--white);
+  color: #f8f5ef;
   display: block;
 }
 
 .btn-handle {
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: #9a8f7a;
   display: block;
   margin-top: 2px;
 }
 
 .arrow {
-  color: var(--gold);
-  opacity: 0.6;
+  color: #c9a84c;
+  opacity: 0.7;
   font-size: 1.1rem;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.social-btn:hover .arrow {
-  transform: translateX(4px);
-  opacity: 1;
-}
+.btn-tiktok { animation-delay: 0.2s; }
+.btn-instagram { animation-delay: 0.3s; }
+.btn-facebook { animation-delay: 0.4s; }
+.btn-whatsapp { animation-delay: 0.5s; }
+.btn-threads { animation-delay: 0.6s; }
 
-/* Footer */
-.footer {
-  margin-top: 40px;
-  text-align: center;
-  animation: fadeUp 0.6s 0.7s ease both;
-}
-
-.footer-tagline {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 0.9rem;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-
-.footer-copy {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-}
-
-/* Website link */
 .website-link {
   margin-top: 20px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 0.8rem;
-  color: var(--gold);
+  color: #c9a84c;
   text-decoration: none;
   letter-spacing: 0.06em;
   opacity: 0.8;
-  transition: opacity 0.2s;
-  animation: fadeUp 0.6s 0.6s ease both;
+  animation: fadeUp 0.6s 0.7s ease both;
 }
-.website-link:hover { opacity: 1; }
-.website-link::before { content: '🌐'; font-size: 0.85rem; }
 
-/* Animations */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeUp 0.6s 0.8s ease both;
+}
+
+.footer-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #c9a84c;
+  margin-bottom: 6px;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: #9a8f7a;
+  letter-spacing: 0.05em;
+}
+
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-16px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -294,12 +238,10 @@ body::after {
   <div class="container">
 
 ```
-<!-- Logo -->
 <div class="logo-wrap">
   <div class="logo-icon">
     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
       <path d="M5 16L20 4l15 12v18H26v-10h-12v10H5V16z"/>
-      <rect x="17" y="24" width="6" height="10" fill="rgba(13,27,62,0.5)"/>
     </svg>
   </div>
   <div class="brand-name">TIIRI</div>
@@ -309,15 +251,11 @@ body::after {
 
 <p class="tagline">Find It. Own It. Build It. — Follow us on social media</p>
 
-<!-- Social Links -->
 <div class="socials">
 
-  <!-- TikTok -->
   <a class="social-btn btn-tiktok" href="https://www.tiktok.com/@tiiri.properties?_r=1&_t=ZS-95y4M2LhB2e" target="_blank" rel="noopener">
-    <div class="icon-bg">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.2 8.2 0 0 0 4.79 1.52V6.77a4.85 4.85 0 0 1-1.02-.08z"/>
-      </svg>
+    <div class="icon-bg" style="background:#010101;">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.2 8.2 0 0 0 4.79 1.52V6.77a4.85 4.85 0 0 1-1.02-.08z"/></svg>
     </div>
     <div class="btn-text">
       <span class="btn-label">TikTok</span>
@@ -326,12 +264,9 @@ body::after {
     <span class="arrow">→</span>
   </a>
 
-  <!-- Instagram -->
   <a class="social-btn btn-instagram" href="https://www.instagram.com/tiiriproperties?igsh=MXJ0eGhsdjVodmMzYQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">
-    <div class="icon-bg">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-      </svg>
+    <div class="icon-bg" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
     </div>
     <div class="btn-text">
       <span class="btn-label">Instagram</span>
@@ -340,12 +275,9 @@ body::after {
     <span class="arrow">→</span>
   </a>
 
-  <!-- Facebook -->
   <a class="social-btn btn-facebook" href="https://www.facebook.com/share/17mLNUU5RM/?mibextid=wwXIfr" target="_blank" rel="noopener">
-    <div class="icon-bg">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-      </svg>
+    <div class="icon-bg" style="background:#1877f2;">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     </div>
     <div class="btn-text">
       <span class="btn-label">Facebook</span>
@@ -354,12 +286,9 @@ body::after {
     <span class="arrow">→</span>
   </a>
 
-  <!-- WhatsApp -->
   <a class="social-btn btn-whatsapp" href="https://chat.whatsapp.com/GKioi1ybVPKH1Hltjdtkgz?mode=gi_t" target="_blank" rel="noopener">
     <div class="icon-bg" style="background:#25d366;">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
     </div>
     <div class="btn-text">
       <span class="btn-label">WhatsApp Group</span>
@@ -368,12 +297,9 @@ body::after {
     <span class="arrow">→</span>
   </a>
 
-  <!-- Threads -->
   <a class="social-btn btn-threads" href="https://www.threads.com/@tiiriproperties?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener">
-    <div class="icon-bg">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.587 1.472 12.01v-.01c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-.505-1.858-1.408-3.32-2.686-4.35-1.346-1.034-3.08-1.57-5.152-1.585-3.002.02-5.267.91-6.73 2.646C4.606 6.425 3.866 8.77 3.843 12c.023 3.23.764 5.575 2.202 7.155 1.463 1.735 3.728 2.626 6.73 2.645 2.74-.022 4.553-.73 5.874-2.297.956-1.123 1.559-2.748 1.79-4.838H12.02v-2.058h10.828c.071.67.107 1.356.107 2.045 0 3.316-.911 5.91-2.707 7.71C18.498 23.274 15.788 24 12.186 24zm5.48-12.804H15.46c-.188-1.177-.642-2.163-1.35-2.935-.82-.9-1.937-1.379-3.23-1.425-.084-.002-.17-.004-.254-.004-1.506 0-2.74.492-3.668 1.461-.904.945-1.384 2.237-1.43 3.848v.01c.046 1.61.526 2.903 1.43 3.848.928.97 2.162 1.46 3.668 1.46.084 0 .17-.001.254-.004 1.298-.046 2.417-.527 3.238-1.433.707-.773 1.16-1.757 1.347-2.93z"/>
-      </svg>
+    <div class="icon-bg" style="background:#101010;">
+      <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.587 1.472 12.01v-.01c.028-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-.505-1.858-1.408-3.32-2.686-4.35-1.346-1.034-3.08-1.57-5.152-1.585-3.002.02-5.267.91-6.73 2.646C4.606 6.425 3.866 8.77 3.843 12c.023 3.23.764 5.575 2.202 7.155 1.463 1.735 3.728 2.626 6.73 2.645 2.74-.022 4.553-.73 5.874-2.297.956-1.123 1.559-2.748 1.79-4.838H12.02v-2.058h10.828c.071.67.107 1.356.107 2.045 0 3.316-.911 5.91-2.707 7.71C18.498 23.274 15.788 24 12.186 24zm5.48-12.804H15.46c-.188-1.177-.642-2.163-1.35-2.935-.82-.9-1.937-1.379-3.23-1.425-.084-.002-.17-.004-.254-.004-1.506 0-2.74.492-3.668 1.461-.904.945-1.384 2.237-1.43 3.848v.01c.046 1.61.526 2.903 1.43 3.848.928.97 2.162 1.46 3.668 1.46.084 0 .17-.001.254-.004 1.298-.046 2.417-.527 3.238-1.433.707-.773 1.16-1.757 1.347-2.93z"/></svg>
     </div>
     <div class="btn-text">
       <span class="btn-label">Threads</span>
@@ -384,12 +310,10 @@ body::after {
 
 </div>
 
-<!-- Website -->
 <a class="website-link" href="https://www.tiiriproperties.co.ke" target="_blank" rel="noopener">
-  www.tiiriproperties.co.ke
+  🌐 www.tiiriproperties.co.ke
 </a>
 
-<!-- Footer -->
 <div class="footer">
   <p class="footer-tagline">Find It. Own It. Build It.</p>
   <p class="footer-copy">© 2025 TIIRI PROPERTIES · KENYA</p>
